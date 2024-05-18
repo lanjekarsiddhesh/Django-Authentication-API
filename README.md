@@ -9,7 +9,7 @@ This API provides a set of endpoints for creating, reading, updating, and deleti
 - Familiarity with Postman
 ## Setup
 
-1. Clone the repository: git clone https://github.com/your-username/your-repo-name.git
+1. Clone the repository: git clone https://github.com/lanjekarsiddhesh/Django-Authentication-API.git
 2. Install the required packages: pip install -r requirements.txt
 3. Create a PostgreSQL database and update the settings.py file with your database credentials.
 4. Run the migrations: python manage.py migrate.
