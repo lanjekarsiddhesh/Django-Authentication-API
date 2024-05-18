@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "67bb837f-6c59-48d6-868a-aab4c3f42df3",
+		"name": "Django API Authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27966587"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "siddhu",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "siddhu",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"full_name\": \"saloni jagtap\",\r\n    \"email\": \"xyz@gmail.com\",\r\n    \"password\": \"1234567890\",\r\n    \"password2\":\"1234567890\",\r\n    \"tc\":true\r\n      \r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/Auth/api/Registration/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"Auth",
+						"api",
+						"Registration",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"xyz@gmail.com\",\r\n\"password\":1234567890}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/Auth/api/Login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"Auth",
+						"api",
+						"Login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile view",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE2MDYxNjY5LCJpYXQiOjE3MTYwNjEzNjksImp0aSI6IjQzMmQ1MTM2MjhkYTQ2MDViNTlmYmE2NDZhMzc5YjYwIiwidXNlcl9pZCI6Nn0.-o6CgBz3L_FtFNXUAmn9ThuRsJBDJMGTwR7SUEjpbYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/Auth/api/Profile/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"Auth",
+						"api",
+						"Profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE2MDYxNjY5LCJpYXQiOjE3MTYwNjEzNjksImp0aSI6IjQzMmQ1MTM2MjhkYTQ2MDViNTlmYmE2NDZhMzc5YjYwIiwidXNlcl9pZCI6Nn0.-o6CgBz3L_FtFNXUAmn9ThuRsJBDJMGTwR7SUEjpbYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"old_password\":1234567890,\r\n\"new_password\":123456789,\r\n\"confirmation_new_password\":123456789}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/Auth/api/changePassword/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"Auth",
+						"api",
+						"changePassword",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Email To Reset Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"lanjekarsiddhu1@gmail.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/Auth/api/Send-Email-To-ResetPassword/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"Auth",
+						"api",
+						"Send-Email-To-ResetPassword",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
