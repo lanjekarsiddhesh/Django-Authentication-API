@@ -1,4 +1,3 @@
-(https://skillicons.dev/icons?i=python,django,mysql,git,vscode,wasm%29)
 # Django Authentication CRUD Operations API
 
 This API provides a set of endpoints for creating, reading, updating, and deleting , Send email user custom authentication data in a Django application.
